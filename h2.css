@@ -1,0 +1,348 @@
+:root {
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ffffff;
+    --bg-primary: #050507;
+    --bg-secondary: #141418;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--bg-primary);
+    background-color: var(--text-secondary);
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #23232e;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+}
+
+.main {
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.head {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 200ms ease-out;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.navitem {
+    width: 100%;
+}
+
+.navitem:last-child {
+    margin-top: auto;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity (0.7);
+    transition: width 2s, height 2s, transform ease-out;
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--text-primary);
+    color: var(--text-secondary);
+}
+
+.head :hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.wrapper {
+    display: inline-flex;
+}
+
+.wrapper .dynamic {
+    margin-left: 15px;
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+}
+
+.dynamic li {
+    list-style: none;
+    color: var(--bg-primary);
+    position: relative;
+    top: 0;
+    animation: slide 6s steps(4)infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -96px;
+    }
+}
+
+.dynamic li span {
+    position: relative;
+}
+
+.dynamic li span::after {
+    content: '';
+    position: absolute;
+    background: var(--text-secondary);
+    height: 100%;
+    width: 100%;
+    left: 0;
+    border-left: 2px solid var(--bg-secondary);
+    animation: typing 1.5s steps(16)infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+.link-text {
+    display: none;
+    margin-left: 1 rem;
+}
+
+.navbar:hover {
+    width: 7rem;
+}
+
+.navbar:hover .link-text {
+    display: block;
+}
+
+.logo {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+    font-size: larger;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.home {
+    height: 100vh;
+    position: relative;
+    left: 50px;
+    letter-spacing: 0.5ch;
+    padding: 100px;
+    display: flex;
+}
+
+.home img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.home img::before {
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border-bottom: 10px solid var(--bg-primary);
+    border-top: 10px solid var(--bg-primary);
+    right: 10px;
+    bottom: -10px;
+}
+
+.aboutme {
+    height: 100vh;
+    position: relative;
+    left: 50px;
+    letter-spacing: 0.5ch;
+    padding: 100px;
+}
+
+.btn {
+    font: 20px;
+    font-weight: 450;
+    padding: 15px 30px;
+    border-radius: 40px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    display: inline-block;
+    border: none;
+    background: var(--bg-primary);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.interests {
+    height: 100vh;
+    display: grid;
+    grid-gap: 2em;
+    padding-left: 100px;
+    grid-template-columns: repeat(2, minmax(350px, 1fr));
+}
+
+.sect {
+    padding: 2em;
+    border-radius: 2em;
+    box-shadow: 10px 10px 30px var(--text-primary);
+}
+
+.sect p {
+    margin-top: 0;
+    position: relative;
+}
+
+.interests img {
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contactme {
+    height: 100vh;
+    padding: 100px;
+    display: grid;
+    place-items: center;
+    background: var(--text-secondary);
+}
+
+.contactme p {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 0.5em;
+}
+
+.contactme section {
+    font-family: 'Anton', sans-serif;
+}
+
+.wrapp {
+    height: 50vh;
+}
+
+.button {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+    background: var(--text-secondary);
+    overflow: hidden;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 10px var(--bg-secondary);
+    display: inline-block;
+    line-height: 60px;
+    font-size: 50px;
+    margin: 10px;
+}
+
+.icon {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.icon i {
+    font-size: 50px;
+    line-height: 60px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.button span {
+    font-size: 20px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.button:hover {
+    width: 200px;
+}
+
+.button:nth-child(1):hover .icon {
+    background: rgb(252, 15, 192);
+}
+
+.button:nth-child(2):hover .icon {
+    background: rgba(11, 156, 49, 1);
+}
+
+.button:nth-child(3):hover .icon {
+    background: #04256d;
+}
+
+.button:nth-child(4):hover .icon {
+    background: #3d70dd;
+}
+
+.button:nth-child(5):hover .icon {
+    background: #00008d;
+}
+
+.contact {
+    height: 50vh;
+}
+
+.contact p {
+    margin-bottom: 20px;
+}
+
+.button2 {
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 13px 30px;
+    transition: 0.4s;
+    filter: grayscale(50%) opacity(0.5) brightness(0.95);
+    border-radius: 40px;
+    transition: width 2s height 2s transform ease-in-out;
+}
+
+.button2:hover {
+    filter: grayscale(0) opacity(1) brightness(1.25);
+}
